@@ -31,7 +31,7 @@ Remove all anchors from the player's list. The player then have to re-unlock all
 Add an anchor into the player's list. `item` should be a coordinate table with a extra optional `uuid` field. If duplications is detected, `false` is returned, otherwise `true`.
 
 ### `anchor.playerstorage.remove_item(player,item)`
-Remove an anchor from the player's list. The syntax is the same as above.
+Remove an anchor from the player's list. The syntax is the same as [above](https://github.com/C-C-Minetest-Server/anchor/blob/main/API.md#anchorplayerstorageadd_itemplayeritem).
 
 ## Registeration APIs
 ### `anchor.register_anchor(name,def)`
