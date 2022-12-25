@@ -2,7 +2,7 @@ Inspired by [Teleport Waypoints in Genshin Impact](https://genshin-impact.fandom
 
 This mod provides a basic anchor node, though modders are strongly recommended to create their own, as the basic one is lack of visual features.
 
-Please refer to [`API.md`](https://github.com/C-C-Minetest-Server/anchor/blob/master/API.md) for developer-specific tutorials.
+Please refer to [`API.md`](https://github.com/C-C-Minetest-Server/anchor/blob/main/API.md) for developer-specific tutorials.
 
 ### List of installed anchors
 In some inventory mods (e.g. Unified Inventory), it's posible to get a list of them by typing `group:anchor` in the search bar.
