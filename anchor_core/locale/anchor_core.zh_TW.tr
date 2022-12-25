@@ -1,0 +1,42 @@
+# textdomain: anchor_core
+
+### chatcommand.lua ###
+List and teleport to teleport anchors=列出並傳送至傳送傳送錨點
+
+### gui_list.lua ###
+No anchors avaliable.=沒有傳送錨點。
+List of teleport anchors=傳送錨點列表
+Teleport=傳送
+
+### gui_modify.lua ###
+Modifying anchor @1=修改傳送錨點 @1
+Keep original UUID=保留原始 UUID
+Anchor updated.=傳送錨點已被更新。
+
+### gui_setup.lua ###
+Setting up anchor at @1=設定在 @1 的傳送錨點
+Anchor created.=傳送錨點已經建立。
+
+### gui_setup.lua ###
+### gui_modify.lua ###
+Name:=名稱：
+Subtitle:=副標題：
+Description:=描述：
+Discard=取消
+Confirm=確定
+
+### gui_setup.lua ###
+### gui_modify.lua ###
+### register.lua ###
+You are not allowed to set up teleport anchors.=你沒有建立傳送錨點的權限。
+
+### register.lua ###
+You are not allowed to use teleport anchors.=你沒有使用傳送錨點的權限。
+Teleport anchor unlocked.=傳送錨點已經解鎖。
+You are not allowed to remove teleport anchors.=你沒有移除傳送錨點的權限。
+Unconfigured teleport anchor=未設定的傳送錨點
+
+### storage.lua ###
+Untitled Anchor=未命名傳送錨點
+It is so mysterious so that nobody can give it a valid description.=其奧祕之廣大，無人能夠給予一個準確的解釋。
+Teleport Anchor - @1=傳送錨點 - @1

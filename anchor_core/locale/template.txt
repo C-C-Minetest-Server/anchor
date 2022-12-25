@@ -1,0 +1,42 @@
+# textdomain: anchor_core
+
+### chatcommand.lua ###
+List and teleport to teleport anchors=
+
+### gui_list.lua ###
+No anchors avaliable.=
+List of teleport anchors=
+Teleport=
+
+### gui_modify.lua ###
+Modifying anchor @1=
+Keep original UUID=
+Anchor updated.=
+
+### gui_setup.lua ###
+Setting up anchor at @1=
+Anchor created.=
+
+### gui_setup.lua ###
+### gui_modify.lua ###
+Name:=
+Subtitle:=
+Description:=
+Discard=
+Confirm=
+
+### gui_setup.lua ###
+### gui_modify.lua ###
+### register.lua ###
+You are not allowed to set up teleport anchors.=
+
+### register.lua ###
+You are not allowed to use teleport anchors.=
+Teleport anchor unlocked.=
+You are not allowed to remove teleport anchors.=
+Unconfigured teleport anchor=
+
+### storage.lua ###
+Untitled Anchor=
+It is so mysterious so that nobody can give it a valid description.=
+Teleport Anchor - @1=
