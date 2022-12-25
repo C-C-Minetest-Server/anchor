@@ -44,7 +44,7 @@ Register an anchor. `def` should be a [node defination table](https://minetest.g
 * `groups.anchor`: Always set to `1` to add all anchors to `group:anchor`.
 
 ## GUI Objects
-Unless otherwise specified, all objects within `anchor.gui` are `[flow](https://content.minetest.net/packages/luk3yx/flow/).make_gui` returned values. Please refer to [README.md of that mod](https://gitlab.com/luk3yx/minetest-flow/-/blob/main/README.md) for full usage of the following objects.
+Unless otherwise specified, all objects within `anchor.gui` are [`flow.make_gui`](https://content.minetest.net/packages/luk3yx/flow/) returned values. Please refer to [README.md of that mod](https://gitlab.com/luk3yx/minetest-flow/-/blob/main/README.md) for full usage of the following objects.
 
 ### `anchor.gui.setup`
 The formspec used to set up new anchors. When calling `:show(player,ctx)`, `ctx` should be a table with a field `pos` containing the coordinate of the target anchor.
