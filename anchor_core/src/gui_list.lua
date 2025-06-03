@@ -1,9 +1,9 @@
 local gui = flow.widgets
-local S = minetest.get_translator("anchor_core")
+local S = core.get_translator("anchor_core")
 
 return flow.make_gui(function(player, ctx)
 	local name = player:get_player_name()
-	local allow_tp = minetest.check_player_privs(name,{interact=true})
+	local allow_tp = core.check_player_privs(name,{interact=true})
 	if not ctx.anchors then
 		ctx.anchors = anchor.playerstorage.get_list(player)
 		ctx.anchors_by_name = {}
@@ -47,7 +47,7 @@ return flow.make_gui(function(player, ctx)
 				},
 			},
 			gui.VBox {
-				gui.Label { label = ctx.curr_anchor_data.name .. (ctx.curr_anchor_data.subtitle and (minetest.get_color_escape_sequence("#777778") .. " - " .. ctx.curr_anchor_data.subtitle) or "")},
+				gui.Label { label = ctx.curr_anchor_data.name .. (ctx.curr_anchor_data.subtitle and (core.get_color_escape_sequence("#777778") .. " - " .. ctx.curr_anchor_data.subtitle) or "")},
 				gui.Box{w=1, h = 0.03, color = "grey"},
 				gui.Textarea { default = ctx.curr_anchor_data.description },
 			}

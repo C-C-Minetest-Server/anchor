@@ -1,4 +1,4 @@
-local S = minetest.get_translator("anchor_basicanchor")
+local S = core.get_translator("anchor_basicanchor")
 
 anchor.register_anchor("anchor_basicanchor:basicanchor",{
 	description = S("Basic Teleport Anchor"),

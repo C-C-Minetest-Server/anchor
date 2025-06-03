@@ -1,9 +1,9 @@
 local gui = flow.widgets
-local S = minetest.get_translator("anchor_core")
+local S = core.get_translator("anchor_core")
 
 return flow.make_gui(function(player, ctx)
 	local name = player:get_player_name()
-	local allow_modify = minetest.check_player_privs(name,{server=true})
+	local allow_modify = core.check_player_privs(name,{server=true})
 	if not allow_modify then
 		return gui.ButtonExit {label=S("You are not allowed to set up teleport anchors.")}
 	end
@@ -49,7 +49,7 @@ return flow.make_gui(function(player, ctx)
 						data.uuid = true
 					end
 					anchor.add_anchor(ctx.pos,data)
-					minetest.chat_send_player(player:get_player_name(),S("Anchor updated."))
+					core.chat_send_player(player:get_player_name(),S("Anchor updated."))
 				end
 			},
 		}

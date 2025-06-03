@@ -10,10 +10,10 @@ anchor = {}
 anchor.version = 1
 
 function anchor.log(lvl,msg)
-	minetest.log(lvl,"[anchor] " .. msg)
+	core.log(lvl,"[anchor] " .. msg)
 end
 
-local MP = minetest.get_modpath("anchor_core")
+local MP = core.get_modpath("anchor_core")
 
 local function load(n)
 	return dofile(MP .. DIR_DELIM .. "src" .. DIR_DELIM .. n .. ".lua")

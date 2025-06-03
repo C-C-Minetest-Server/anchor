@@ -1,6 +1,6 @@
-local WP = minetest.get_worldpath()
+local WP = core.get_worldpath()
 local BASE = WP .. DIR_DELIM .. "anchor_networks" .. DIR_DELIM
-minetest.mkdir(BASE)
+core.mkdir(BASE)
 
 local data = {}
 local fx = {}
@@ -9,7 +9,7 @@ function fx.load(name)
 	local file = io.open(BASE .. name, "rb")
 	if file then
 		local content = file:read("*all")
-		return minetest.deserialize(content)
+		return core.deserialize(content)
 	else
 		return {}
 	end
@@ -25,7 +25,7 @@ end
 function fx.get_anchor(name,pos)
 	local idata = fx.get(name)
 	if idata[pos] then
-		local ianchor = table.copy[idata[pos]]
+		local ianchor = table.copy(idata[pos])
 		ianchor.pos = pos
 		return ianchor
 	end
@@ -34,7 +34,7 @@ end
 
 function fx.save(name,idata)
 	data[name] = idata
-	minetest.safe_file_write(BASE .. name,minetest.serialize(idata))
+	core.safe_file_write(BASE .. name,core.serialize(idata))
 end
 
 function fx.add_anchor(name,pos,def)

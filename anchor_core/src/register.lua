@@ -1,16 +1,16 @@
-local S = minetest.get_translator("anchor_core")
+local S = core.get_translator("anchor_core")
 anchor.node = {}
 
 function anchor.node.on_rightclick(pos, node, clicker, itemstack, pointed_thing)
 	if not clicker:is_player() then return end
 	local name = clicker:get_player_name()
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	local uuid = meta:get_string("anchor_uuid")
-	local allow_modify = minetest.check_player_privs(name,{server=true})
-	local allow_tp = minetest.check_player_privs(name,{interact=true})
+	local allow_modify = core.check_player_privs(name,{server=true})
+	local allow_tp = core.check_player_privs(name,{interact=true})
 	if uuid == "" then
 		if not allow_modify then
-			minetest.chat_send_player(name,S("You are not allowed to set up teleport anchors."))
+			core.chat_send_player(name,S("You are not allowed to set up teleport anchors."))
 			return
 		end
 		anchor.gui.setup:show(clicker,{pos=pos})
@@ -18,7 +18,7 @@ function anchor.node.on_rightclick(pos, node, clicker, itemstack, pointed_thing)
 	end
 
 	if not allow_tp then
-		minetest.chat_send_player(name,S("You are not allowed to use teleport anchors."))
+		core.chat_send_player(name,S("You are not allowed to use teleport anchors."))
 		return
 	end
 
@@ -26,7 +26,7 @@ function anchor.node.on_rightclick(pos, node, clicker, itemstack, pointed_thing)
 	data.uuid = uuid
 	local add_result = anchor.playerstorage.add_item(clicker,data)
 	if add_result then
-		minetest.chat_send_player(name,S("Teleport anchor unlocked."))
+		core.chat_send_player(name,S("Teleport anchor unlocked."))
 	end
 
 	if allow_modify then
@@ -38,21 +38,21 @@ end
 function anchor.node.can_dig(pos, player)
 	if not player or not player:is_player() then return end
 	local name = player:get_player_name()
-	local allow_modify = minetest.check_player_privs(name,{server=true})
+	local allow_modify = core.check_player_privs(name,{server=true})
 	if not allow_modify then
-		minetest.chat_send_player(name,S("You are not allowed to remove teleport anchors."))
+		core.chat_send_player(name,S("You are not allowed to remove teleport anchors."))
 		return false
 	end
 	return true
 end
 
 function anchor.node.on_construct(pos)
-	local meta = minetest.get_meta(pos)
+	local meta = core.get_meta(pos)
 	meta:set_string("infotext",S("Unconfigured teleport anchor"))
 end
 
 function anchor.node.on_destruct(pos)
-	local pos_string = minetest.pos_to_string(pos)
+	local pos_string = core.pos_to_string(pos)
 	anchor.storage[pos_string] = nil
 end
 
@@ -66,6 +66,6 @@ function anchor.register_anchor(name,def)
 		def[k] = v
 	end
 
-	return minetest.register_node(name,def)
+	return core.register_node(name,def)
 end
 
